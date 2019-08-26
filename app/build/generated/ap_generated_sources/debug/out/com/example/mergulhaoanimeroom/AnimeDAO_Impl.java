@@ -4,6 +4,7 @@ import android.database.Cursor;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Override;
 import java.lang.String;
@@ -16,6 +17,8 @@ public final class AnimeDAO_Impl implements AnimeDAO {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter __insertionAdapterOfAnime;
+
+  private final SharedSQLiteStatement __preparedStmtOfApagarTudo;
 
   public AnimeDAO_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -41,6 +44,13 @@ public final class AnimeDAO_Impl implements AnimeDAO {
         stmt.bindLong(4, value.getAno());
       }
     };
+    this.__preparedStmtOfApagarTudo = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM anime";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -51,6 +61,19 @@ public final class AnimeDAO_Impl implements AnimeDAO {
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void apagarTudo() {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfApagarTudo.acquire();
+    __db.beginTransaction();
+    try {
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfApagarTudo.release(_stmt);
     }
   }
 

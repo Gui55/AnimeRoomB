@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     public static AnimeDAO animeDao; // o DAO
-    private Button scrollButton, cadastroButton; //os Botões
+    private Button scrollButton, cadastroButton, limparButton; //os Botões
     private EditText enterNome, enterGenero, enterAno; //os EditTexts
 
     private int count = 0;
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         scrollButton=(Button)findViewById(R.id.scrollButton);
         cadastroButton=(Button)findViewById(R.id.cadastroButton);
+        limparButton=(Button)findViewById(R.id.limparButton);
 
         //Associação dos EditTexts
 
@@ -86,6 +87,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Listener do botão de limpar a lista
+
+        limparButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                animeDao.apagarTudo();
+
+                Toast.makeText(MainActivity.this, "Lista de animes limpa com sucesso", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
     }
 }

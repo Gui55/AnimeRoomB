@@ -15,4 +15,7 @@ public interface AnimeDAO {
     @Query("SELECT * FROM anime")
     List<Anime> getAnimes();
 
+    @Query("DELETE FROM anime")
+    void apagarTudo();
+
 }

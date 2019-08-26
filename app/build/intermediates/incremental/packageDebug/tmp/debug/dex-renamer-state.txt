@@ -1,4 +1,4 @@
-#Sun Aug 25 19:22:11 BRT 2019
+#Mon Aug 26 19:53:21 BRT 2019
 base.0=/home/mergulhao/AndroidStudioProjects/MergulhaoAnimeRoom/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
