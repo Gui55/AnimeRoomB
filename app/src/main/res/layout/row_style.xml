@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="@dimen/rowHeight"
+    android:background="@drawable/border">
+
+    <TextView
+        android:id="@+id/recycleNomeOutput"
+        android:layout_width="match_parent"
+        android:textColor="#ffd2fd"
+        android:layout_height="35dp"
+        android:text="Nome"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/recycleAnoOutput"
+        android:text="Ano"
+        android:textColor="#ffd2fd"
+        android:layout_below="@id/recycleNomeOutput"
+        android:layout_width="@dimen/textWidth"
+        android:layout_height="@dimen/textHeightB"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/recycleGeneroOutput"
+        android:textColor="#ffd2fd"
+        android:layout_width="@dimen/textWidthB"
+        android:layout_height="@dimen/textHeightB"
+        android:layout_below="@id/recycleNomeOutput"
+        android:layout_toRightOf="@id/recycleAnoOutput"
+        android:text="Genero"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"/>
+
+
+
+</RelativeLayout>

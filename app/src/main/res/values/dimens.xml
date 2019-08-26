@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textHeight">50dp</dimen>
+    <dimen name="textHeightB">35dp</dimen>
+    <dimen name="textWidth">60dp</dimen>
+    <dimen name="textWidthB">258dp</dimen>
+    <dimen name="rowHeight">85dp</dimen>
+</resources>
